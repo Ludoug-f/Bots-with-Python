@@ -3,12 +3,14 @@
 ## Description
 
 Bot para fazer pesquisas no Bing usando palavras geradas aleatoriamente, feito para adquirir pontos no Microsoft Rewards.
-
+ 
+ ---
 ## Requirements
 
 - Python 3.10.0
 - Selenium 4.9.1
 
+---
 ## How to use
 
 1. Clone to repositório
