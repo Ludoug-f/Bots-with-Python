@@ -1,6 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 import time
 import random
 import string
@@ -19,18 +20,19 @@ str_list = random_word_list(30)
 driver = webdriver.Edge()
 
 driver.get('https://bing.com')
-time.sleep(2)
+time.sleep(1)
 
 entrar = driver.find_element(By.ID, 'id_s')
 if entrar.is_displayed():
     entrar.click()
-time.sleep(2)
+time.sleep(1)
 
 for word in str_list:
-    search = driver.find_element(By.ID, 'sb_form_q')
+    search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
+    search.clear()
     search.send_keys(word)
     search.submit()
-    time.sleep(3)
+    time.sleep(1)
 
 time.sleep(3)
 driver.quit()
