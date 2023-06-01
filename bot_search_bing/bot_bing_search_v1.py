@@ -17,7 +17,7 @@ def random_word_list(quantidade):
     return word_list
 
 # Gerar uma lista de palavras aleatórias
-word_list = random_word_list(30)
+word_list = random_word_list(40)
 
 # Criar uma instância do webdriver Edge
 driver = webdriver.Edge()
