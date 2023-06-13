@@ -41,9 +41,8 @@ pip install selenium # or pip3 install selenium
 
 3. baixe o webdriver do navegador que você deseja usar e coloque na pasta do projeto
 
-Opcional: Por padrão o bot esta configurado para pesquisar ate atingir *90* pontos, para alterar o valor basta alterar a variavel *VALOR* no arquivo *bot_bing_search.py* na linha 9
-
 ```python
+Opcional: Por padrão o bot esta configurado para pesquisar ate atingir *90* pontos, para alterar o valor basta alterar a variavel *VALOR* no arquivo *bot_bing_search.py* na linha 9
 
 4. Execute o script
 
