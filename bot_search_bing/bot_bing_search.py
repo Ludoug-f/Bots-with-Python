@@ -6,6 +6,8 @@ import time
 import random
 import string
 
+VALOR = 90
+
 ## Função para gerar uma lista de palavras aleatórias
 # def random_word_list(quantidade):
 #     word_list = []
@@ -42,7 +44,7 @@ init_points_num = int(init_points.text)
 print("inicial", init_points_num)
 
 # Definir a quantidade de pontos desejada
-sum_points = init_points_num + 90
+sum_points = init_points_num + VALOR
 
 time.sleep(2)
 

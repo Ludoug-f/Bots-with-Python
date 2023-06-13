@@ -4,6 +4,8 @@
 
 Bot para fazer pesquisas no Bing usando palavras geradas aleatoriamente, feito para adquirir pontos no Microsoft Rewards.
 
+Atenção: o bot foi testado apenas no edge, mas deve funcionar em qualquer navegador que tenha suporte ao selenium
+
 O bot segue os seguintes passos:
 
 1. Abre o navegador
@@ -38,6 +40,10 @@ pip install selenium # or pip3 install selenium
 ```
 
 3. baixe o webdriver do navegador que você deseja usar e coloque na pasta do projeto
+
+Opcional: Por padrão o bot esta configurado para pesquisar ate atingir *90* pontos, para alterar o valor basta alterar a variavel *VALOR* no arquivo *bot_bing_search.py* na linha 9
+
+```python
 
 4. Execute o script
 
