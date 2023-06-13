@@ -6,6 +6,18 @@ import time
 import random
 import string
 
+# def random_word_list(quantidade):
+#     word_list = []
+    
+#     for _ in range(quantidade):
+#         word = ''.join(random.choice(string.ascii_lowercase) for _ in range(random.randint(3, 10)))
+#         word_list.append(word)
+    
+#     return word_list
+
+def random_word():
+    return ''.join(random.choice(string.ascii_lowercase) for _ in range(random.randint(3, 10)))
+
 # Criar uma instância do webdriver Edge
 driver = webdriver.Edge()
 
@@ -20,33 +32,34 @@ time.sleep(1)
 
 ## atualizar a pagina
 driver.refresh()
-time.sleep(2)
+time.sleep(3)
 
 init_points = driver.find_element(By.ID, 'id_rc')
 init_points_num = int(init_points.text)
-print(init_points_num)
+print("inicial", init_points_num)
 
-sum_points = init_points_num + 90
+sum_points = init_points_num + 15
 
 time.sleep(2)
 
 search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
-search.send_keys('teste')
+search.send_keys('udyr')
 search.submit()
 time.sleep(1)
 
-lated_points = driver.find_element(By.ID, 'id_rc')
-lated_points_num = int(lated_points.text)
+current_points = driver.find_element(By.ID, 'id_rc')
+current_points_num = int(current_points.text)
 
-while lated_points_num != sum_points:
+while current_points_num != sum_points:
     search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
     search.clear()
-    search.send_keys('teste')
+    search.send_keys(random_word())
     search.submit()
-    time.sleep(1)
-    lated_points = driver.find_element(By.ID, 'id_rc')
-    lated_points_num = int(lated_points.text)
-    print(lated_points_num)
+    time.sleep(2)
+    current_points = driver.find_element(By.ID, 'id_rc')
+    current_points_num = int(current_points.text)
+    print("soma", sum_points)
+    print("atual", current_points_num)
 
 
-time.sleep(500)
+time.sleep(2)
