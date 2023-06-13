@@ -42,7 +42,7 @@ init_points_num = int(init_points.text)
 print("inicial", init_points_num)
 
 # Definir a quantidade de pontos desejada
-sum_points = init_points_num + 15
+sum_points = init_points_num + 90
 
 time.sleep(2)
 
