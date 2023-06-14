@@ -67,7 +67,14 @@ while current_points_num != sum_points:
     time.sleep(2)
     current_points = driver.find_element(By.ID, 'id_rc')
     current_points_num = int(current_points.text)
-    print("soma", sum_points)
-    print("atual", current_points_num)
+    print(f"{current_points_num} / {sum_points}")
+
+## Realizar a última pesquisa de garantia
+search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
+search.clear()
+search.send_keys(random_word())
+search.submit()
 
 time.sleep(2)
+
+driver.quit()
