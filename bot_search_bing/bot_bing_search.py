@@ -27,6 +27,7 @@ driver = webdriver.Edge()
 
 # Abrir a página inicial do Bing
 driver.get('https://bing.com')
+time.sleep(1)
 
 # Clicar no botão de login se estiver visível
 entrar = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_s')))
