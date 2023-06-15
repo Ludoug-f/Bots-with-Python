@@ -32,30 +32,38 @@ driver.get('https://bing.com')
 entrar = driver.find_element(By.ID, 'id_s')
 if entrar.is_displayed():
     entrar.click()
-time.sleep(1)
+    print("clicou em entrar")
 
 ## atualizar a pagina
 driver.refresh()
-time.sleep(3)
+time.sleep(1)
+driver.refresh()
+time.sleep(1)
+driver.refresh()
+time.sleep(1)
+
+
+init_rewards = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
+print(init_rewards.text)
+if init_rewards.text == 'Rewards':
+    driver.refresh()
+    print("refresh")
 
 # Obter a quantidade inicial de pontos
-init_points = driver.find_element(By.ID, 'id_rc')
+init_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
 init_points_num = int(init_points.text)
 print("inicial", init_points_num)
 
 # Definir a quantidade de pontos desejada
 sum_points = init_points_num + VALOR
 
-time.sleep(2)
-
 # Realizar uma pesquisa inicial
 search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
 search.send_keys('udyr')
 search.submit()
-time.sleep(1)
 
 # Obter a quantidade atual de pontos
-current_points = driver.find_element(By.ID, 'id_rc')
+current_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
 current_points_num = int(current_points.text)
 
 # Realizar pesquisas adicionais até atingir a quantidade desejada de pontos
@@ -64,17 +72,16 @@ while current_points_num != sum_points:
     search.clear()
     search.send_keys(random_word())
     search.submit()
-    time.sleep(2)
-    current_points = driver.find_element(By.ID, 'id_rc')
+    current_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
     current_points_num = int(current_points.text)
     print(f"{current_points_num} / {sum_points}")
 
 ## Realizar a última pesquisa de garantia
-search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
-search.clear()
-search.send_keys(random_word())
-search.submit()
+# search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
+# search.clear()
+# search.send_keys(random_word())
+# search.submit()
 
-time.sleep(2)
+time.sleep(3)
 
 driver.quit()
