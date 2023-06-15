@@ -29,25 +29,19 @@ driver = webdriver.Edge()
 driver.get('https://bing.com')
 
 # Clicar no botão de login se estiver visível
-entrar = driver.find_element(By.ID, 'id_s')
+entrar = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_s')))
 if entrar.is_displayed():
     entrar.click()
     print("clicou em entrar")
 
+logado = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_n')))
+if logado.is_displayed():
+    print("logado")
+
+time.sleep(1)
 ## atualizar a pagina
 driver.refresh()
-time.sleep(1)
-driver.refresh()
-time.sleep(1)
-driver.refresh()
-time.sleep(1)
-
-
-init_rewards = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
-print(init_rewards.text)
-if init_rewards.text == 'Rewards':
-    driver.refresh()
-    print("refresh")
+time.sleep(3)
 
 # Obter a quantidade inicial de pontos
 init_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
@@ -74,6 +68,7 @@ while current_points_num != sum_points:
     search.submit()
     current_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
     current_points_num = int(current_points.text)
+    time.sleep(1)
     print(f"{current_points_num} / {sum_points}")
 
 ## Realizar a última pesquisa de garantia
