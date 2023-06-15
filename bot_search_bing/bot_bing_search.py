@@ -68,7 +68,7 @@ while current_points_num != sum_points:
     search.submit()
     current_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
     current_points_num = int(current_points.text)
-    time.sleep(1)
+    time.sleep(2)
     print(f"{current_points_num} / {sum_points}")
 
 ## Realizar a última pesquisa de garantia
