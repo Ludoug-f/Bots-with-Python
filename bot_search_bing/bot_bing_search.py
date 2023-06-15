@@ -56,6 +56,7 @@ sum_points = init_points_num + VALOR
 search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
 search.send_keys('udyr')
 search.submit()
+time.sleep(1)
 
 # Obter a quantidade atual de pontos
 current_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
