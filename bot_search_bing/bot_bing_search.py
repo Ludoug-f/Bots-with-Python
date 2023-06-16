@@ -63,6 +63,7 @@ current_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located(
 current_points_num = int(current_points.text)
 
 # Realizar pesquisas adicionais até atingir a quantidade desejada de pontos
+
 while current_points_num != sum_points:
     search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
     search.clear()
@@ -73,11 +74,21 @@ while current_points_num != sum_points:
     time.sleep(2)
     print(f"{current_points_num} / {sum_points}")
 
-## Realizar a última pesquisa de garantia
-# search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
-# search.clear()
-# search.send_keys(random_word())
-# search.submit()
+time.sleep(1)
+
+driver.get('https://bing.com')
+
+points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
+points_num = int(current_points.text)
+
+if points_num == sum_points:
+    print("concluido")
+else:
+    for _ in range(5):
+        search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
+        search.clear()
+        search.send_keys(random_word())
+        search.submit()
 
 time.sleep(3)
 
