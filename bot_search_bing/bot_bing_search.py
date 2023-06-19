@@ -6,8 +6,6 @@ import time
 import random
 import string
 
-VALOR = 90
-
 ## Função para gerar uma lista de palavras aleatórias
 # def random_word_list(quantidade):
 #     word_list = []
@@ -34,62 +32,59 @@ entrar = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 
 if entrar.is_displayed():
     entrar.click()
     print("clicou em entrar")
-
-logado = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_n')))
-if logado.is_displayed():
+else:
     print("logado")
 
+# logado = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_n')))
+# if logado.is_displayed():
+#     print("logado")
+
 time.sleep(1)
+
 ## atualizar a pagina
 driver.refresh()
-time.sleep(3)
+time.sleep(1)
 
 # Obter a quantidade inicial de pontos
-init_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
-init_points_num = int(init_points.text)
-print("inicial", init_points_num)
+# init_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
+# init_points_num = int(init_points.text)
+# print("inicial", init_points_num)
 
 # Definir a quantidade de pontos desejada
-sum_points = init_points_num + VALOR
+# sum_points = init_points_num + VALOR
+# time.sleep(1)
 
 # Realizar uma pesquisa inicial
 search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
 search.send_keys('udyr')
 search.submit()
-time.sleep(1)
+time.sleep(3)
 
 # Obter a quantidade atual de pontos
-current_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
-current_points_num = int(current_points.text)
+# current_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
+# current_points_num = int(current_points.text)
 
 # Realizar pesquisas adicionais até atingir a quantidade desejada de pontos
 
-while current_points_num != sum_points:
+before_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
+before_points_num = int(before_points.text)
+current_points_num = before_points_num + 3
+
+while before_points_num != current_points_num:
+    before_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
+    before_points_num = int(before_points.text)
     search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
     search.clear()
     search.send_keys(random_word())
     search.submit()
+    time.sleep(3)
     current_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
     current_points_num = int(current_points.text)
-    time.sleep(2)
-    print(f"{current_points_num} / {sum_points}")
+    time.sleep(1)
+    print(f"{current_points_num} / {before_points_num}")
 
-time.sleep(1)
-
-driver.get('https://bing.com')
-
-points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
-points_num = int(current_points.text)
-
-if points_num == sum_points:
-    print("concluido")
-else:
-    for _ in range(5):
-        search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
-        search.clear()
-        search.send_keys(random_word())
-        search.submit()
-
-time.sleep(3)
+time.sleep(2)
 
 driver.quit()
+
+## salvar os pontos depois da primeira pesquisa e comprar com o anterior enquanto estiver mudando continua pesquisando quando ficar igual ao antesrior para
