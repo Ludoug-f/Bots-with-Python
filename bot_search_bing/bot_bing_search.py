@@ -55,10 +55,18 @@ time.sleep(1)
 # time.sleep(1)
 
 # Realizar uma pesquisa inicial
-search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
-search.send_keys('udyr')
-search.submit()
-time.sleep(3)
+# search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
+# search.send_keys('udyr')
+# search.submit()
+# time.sleep(3)
+
+for i in range(40):
+    search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
+    search.clear()
+    search.send_keys(random_word())
+    search.submit()
+    time.sleep(2)
+    print(f"{i} / 40")
 
 # Obter a quantidade atual de pontos
 # current_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
