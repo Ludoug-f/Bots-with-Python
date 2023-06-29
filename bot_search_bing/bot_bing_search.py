@@ -25,25 +25,25 @@ driver = webdriver.Edge()
 
 # Abrir a página inicial do Bing
 driver.get('https://bing.com')
-time.sleep(1)
+time.sleep(5)
 
 # Clicar no botão de login se estiver visível
-entrar = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_s')))
-if entrar.is_displayed():
-    entrar.click()
-    print("clicou em entrar")
-else:
-    print("logado")
+# entrar = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_s')))
+# if entrar.is_displayed():
+#     entrar.click()
+#     print("clicou em entrar")
+# else:
+#     print("logado")
 
 # logado = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_n')))
 # if logado.is_displayed():
 #     print("logado")
 
-time.sleep(1)
+# time.sleep(1)
 
 ## atualizar a pagina
-driver.refresh()
-time.sleep(1)
+# driver.refresh()
+# time.sleep(1)
 
 # Obter a quantidade inicial de pontos
 # init_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
@@ -60,13 +60,13 @@ time.sleep(1)
 # search.submit()
 # time.sleep(3)
 
-for i in range(40):
+for i in range(35):
     search = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'sb_form_q')))
     search.clear()
     search.send_keys(random_word())
     search.submit()
-    time.sleep(2)
-    print(f"{i} / 40")
+    time.sleep(1)
+    print(f"{i} / 35")
 
 # Obter a quantidade atual de pontos
 # current_points = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_rc')))
