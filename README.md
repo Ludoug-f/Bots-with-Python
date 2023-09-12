@@ -4,4 +4,4 @@ Este repositório contém uma coleção de projetos de bots desenvolvidos em Pyt
 
 ## Projetos
 
-- __Search_Bing__: Bot que automatiza pesquisas no Bing com finalidade de adquirir pontos no Microsoft Rewards.
+- __Search_Bing__: Bot que realiza pesquisas no Bing com strings aleatórias.
