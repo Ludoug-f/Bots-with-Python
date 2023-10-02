@@ -1,47 +1,35 @@
 # Bing_Search
 
-## Description
+## Descrição
 
-Bot para fazer pesquisas no Bing usando palavras geradas aleatoriamente, feito para adquirir pontos no Microsoft Rewards.
+O `Bing_Search_Bot` é um script Python desenvolvido com Selenium que automatiza pesquisas no site do Bing. Este script gera consultas de pesquisa aleatórias e as executa no Bing. É uma demonstração de automação web com Python.
 
-Atenção: o bot foi testado apenas no edge, mas deve funcionar em qualquer navegador que tenha suporte ao selenium
+**Atenção:** O bot foi testado apenas no navegador Edge, mas deve funcionar em qualquer navegador que tenha suporte ao Selenium.
 
-O bot segue os seguintes passos:
+## Requisitos
 
-1. Abre o navegador
-2. Acessa o site do Bing
-3. Faz login na conta da Microsoft se nao estiver logado
-4. Atualiza a pagina para garantir que esta aparecendo os pontos
-5. Salva o valor dos pontos atuais e analisa quantos pontos faltam
-6. Realiza a primeira pesquisa usando uma palavra pre definida
-7. Na pagina de busca salva o valor dos pontos atuais e analisa quantos pontos faltam e inicia um loop
-8. No loop enquanto o valor dos pontos atuais for diferente do valor pretendido ele realiza uma nova pesquisa usando uma palavra gerada aleatoriamente
+- Python 3.6 ou superior
+- Selenium (você pode instalar com `pip install selenium`)
+- Um navegador web compatível com o Selenium (por exemplo, Microsoft Edge)
 
- 
- ---
-## Requirements
+## Como Usar
 
-- Python 3.10.0
-- Selenium 4.9.1
-
----
-## How to use
-
-1. Clone to repositório
+1. Clone o repositório ou baixe o arquivo do script.
 
 ```bash
 git clone git@github.com:Ludoug-f/Bots-with-Python.git
 ```
 
-2. Instale os requirements
+2. Certifique-se de que você tem o Selenium instalado:
 
 ```bash
-pip install selenium # or pip3 install selenium
+pip install selenium # ou pip3 install selenium
 ```
 
-3. baixe o webdriver do navegador que você deseja usar e coloque na pasta do projeto
+3. Baixe o webdriver do navegador que você deseja usar e coloque-o na pasta do projeto ou:
 
-Opcional: Por padrão o bot esta configurado para pesquisar ate atingir *90* pontos, para alterar o valor basta alterar o numero da variavel *VALOR* no arquivo *bot_bing_search.py* na linha 9.
+* `C:\Users"SeuNomeDeUsuário"\AppData\Local\Microsoft\Edge\Application` Se estiver usando o navegador Edge, ou
+* Coloque na pasta do projeto
 
 4. Execute o script
 
