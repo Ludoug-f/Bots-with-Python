@@ -9,7 +9,7 @@ O `Bing_Search_Bot` é um script Python desenvolvido com Selenium que automatiza
 ## Requisitos
 
 - Python 3.6 ou superior
-- Selenium (você pode instalar com `pip install selenium`)
+- Selenium 3.x ou superior
 - Um navegador web compatível com o Selenium (por exemplo, Microsoft Edge)
 
 ## Como Usar
@@ -34,5 +34,9 @@ pip install selenium # ou pip3 install selenium
 4. Execute o script
 
 ```bash
-python bot_bing_search.py # or python3 bot_bing_search.py
+python Bing_Search_Bot.py # or python3 bot_bing_search.py
 ```
+
+Digite no terminal a quantidade de pesquisas que deseja.
+
+
