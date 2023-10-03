@@ -10,15 +10,15 @@ import string
 def random_str():
     return ''.join(random.choice(string.ascii_lowercase) for _ in range(random.randint(3, 10)))
 
-# Solicita ao usuário que insira um valor e armazena na variável
-input_qnt = input("digite a quantidade de pesquisas que deseja realizar: ")
-search_qnt = int(input_qnt)
-
 # Criar uma instância do webdriver Edge
 driver = webdriver.Edge()
 
 # Abrir a página inicial do Bing
 driver.get('https://bing.com')
+
+# Solicita ao usuário que insira um valor e armazena na variável
+input_qnt = input("digite a quantidade de pesquisas que deseja realizar: ")
+search_qnt = int(input_qnt)
 
 # Realizar pesquisas até atingir a quantidade desejada
 for i in range(search_qnt):
