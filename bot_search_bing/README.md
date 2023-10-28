@@ -28,7 +28,7 @@ pip install selenium # ou pip3 install selenium
 
 3. Baixe o webdriver do navegador que você deseja usar e coloque-o na pasta:
 
-* `C:\Users"SeuNomeDeUsuário"\AppData\Local\Microsoft\Edge\Application` Se estiver usando o navegador Edge, ou
+* `C:\Users\"SeuNomeDeUsuário"\AppData\Local\Microsoft\Edge\Application` Se estiver usando o navegador Edge, ou
 * Coloque na pasta do projeto
 
 4. Execute o script
