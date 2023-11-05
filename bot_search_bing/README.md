@@ -26,17 +26,12 @@ git clone git@github.com:Ludoug-f/Bots-with-Python.git
 pip install selenium # ou pip3 install selenium
 ```
 
-3. Baixe o webdriver do navegador que você deseja usar e coloque-o na pasta:
-
-* `C:\Users\"SeuNomeDeUsuário"\AppData\Local\Microsoft\Edge\Application` Se estiver usando o navegador Edge, ou
-* Coloque na pasta do projeto
+3. Baixe o webdriver do navegador que você deseja usar e coloque-o na mesma pasta do arquivo `Bing_Search_Bot.py`:
 
 4. Execute o script
 
 ```bash
-python Bing_Search_Bot.py # or python3 bot_bing_search.py
+python Bing_Search_Bot.py # or python3 Bing_Search_Bot.py
 ```
 
-Digite no terminal a quantidade de pesquisas que deseja.
-
-
+Digite no terminal a quantidade de pesquisas que deseja e aperte Enter.
