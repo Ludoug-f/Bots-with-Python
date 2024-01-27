@@ -2,7 +2,7 @@
 
 ## Descrição
 
-O `Bing_Search_Bot` é um script Python desenvolvido com Selenium que automatiza pesquisas no site do Bing. Este script gera consultas de pesquisa aleatórias e as executa no Bing. É uma demonstração de automação web com Python.
+O `Bing_Search_Bot` é um script Python desenvolvido com Selenium que automatiza pesquisas no site do Bing. Este script gera consultas de pesquisa com nomes de Pokemons. É uma demonstração de automação web com Python.
 
 **Atenção:** O bot foi testado apenas no navegador Edge, mas deve funcionar em qualquer navegador que tenha suporte ao Selenium.
 
@@ -20,7 +20,9 @@ O `Bing_Search_Bot` é um script Python desenvolvido com Selenium que automatiza
 git clone git@github.com:Ludoug-f/Bots-with-Python.git
 ```
 
-2. Certifique-se de que você tem o Selenium instalado:
+2. Certifique-se de que você tem o Selenium e Python instalados:
+
+- python: https://python.org.br/instalacao-windows/ ou https://python.org.br/instalacao-linux/
 
 ```bash
 pip install selenium # ou pip3 install selenium
@@ -34,4 +36,4 @@ pip install selenium # ou pip3 install selenium
 python Bing_Search_Bot.py # or python3 Bing_Search_Bot.py
 ```
 
-Digite no terminal a quantidade de pesquisas que deseja e aperte Enter.
+Assim que o navegador abrir confirme que esta logado na sua conta da Microsoft e pressione enter no terminal. O script irá fazer as pesquisas e depois fechar o navegador. 
