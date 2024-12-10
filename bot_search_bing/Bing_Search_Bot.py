@@ -19,7 +19,7 @@ def Get_Pokenames():
     
 Pokenames = Get_Pokenames()
 random.shuffle(Pokenames)
-Pokenames = Pokenames[:35]
+Pokenames = Pokenames[:45]
 
 def search():
     # Criar uma instância do webdriver Edge
@@ -41,7 +41,8 @@ def search():
         search_box.send_keys(name)
         search_box.submit()
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'b_results')))
-        time.sleep(60) # Aguardar 60 segundos
+        timer = random.randint(180, 360)
+        time.sleep(timer) # Aguardar xx segundos
 
     # Aguardar 2 segundos antes de fechar
     time.sleep(2)
