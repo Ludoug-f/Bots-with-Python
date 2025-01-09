@@ -19,7 +19,7 @@ def Get_Pokenames():
     
 Pokenames = Get_Pokenames()
 random.shuffle(Pokenames)
-Pokenames = Pokenames[:45]
+Pokenames = Pokenames[:50]
 
 def search():
     # Criar uma instância do webdriver Edge
